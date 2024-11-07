@@ -1,6 +1,5 @@
 # First Difference Analysis of the Motherhood Penalty in Vietnam: An Econometric Study Using VHLSS Data from 2004, 2006, and 2008
 **Author**: Pham Minh Tu  
-**Date**: `Add the date here`
 
 ## Abstract
 This study examines the impact of having a small child on women’s income in Vietnam using panel data from the Vietnam Household Living Standards Survey (VHLSS) between 2004, 2006, and 2008. By employing a First Difference model, we aim to isolate the effect of motherhood status on income, controlling for age, education, and other factors. Findings suggest mothers experience a 1.5% decrease in income due to motherhood, though this effect is statistically insignificant.
