@@ -50,12 +50,24 @@ where \( Y_{it} \) is the income of individual \( i \) at time \( t \).
 ---
 
 ## Results and Findings
-Key findings:
-- **Motherhood Penalty**: A negative 1.5% effect on income for mothers with small children, but statistically insignificant.
-- **Age and Public Sector Employment**: Significant positive effects on income, indicating experience and sectoral stability play crucial roles in wage dynamics.
-- **Control Variables**: Schooling, ethnicity, and urban/rural status showed no significant short-term effects on income changes.
 
-These findings suggest that motherhood may not drastically affect income in the short term, possibly due to supportive family networks or flexible work options.
+### First Difference Model Results
+The table below presents the main results from the First Difference Model:
+
+| Variable                | Coefficient | Std. Error | t-stat | p-value |
+|-------------------------|-------------|------------|--------|---------|
+| mother\_of\_small\_child | -0.015      | 0.0635     | -0.237 | 0.8128  |
+| age                     | 0.098       | 0.0431     | 2.276  | 0.023   |
+| age\_sq                 | 0.0001      | 0.0005     | 0.172  | 0.8634  |
+| schooling\_years        | 0.0037      | 0.018      | 0.208  | 0.8354  |
+| ethnic                  | -0.0276     | 0.1022     | -0.271 | 0.7868  |
+| marital\_status         | 0.1353      | 0.0901     | 1.501  | 0.1334  |
+| canbo?                  | 0.194       | 0.0402     | 4.824  | 0.000   |
+
+### Discussion of Results
+The **mother\_of\_small\_child** variable has a coefficient of -0.015, indicating a 1.5% reduction in income for mothers with small children, though this effect is statistically insignificant (p = 0.8128). However, **age** and **public sector employment (canbo?)** have statistically significant positive effects on income, likely due to accumulated experience and stable public sector jobs.
+
+---
 
 ## Conclusion and Policy Implications
 ### Summary of Findings
