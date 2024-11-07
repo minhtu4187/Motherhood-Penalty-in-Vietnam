@@ -39,6 +39,12 @@ The panel data construction involved merging individual and household data for c
 
 ## Model Selection and Application
 A **First Difference Model** was selected to control for unobserved, time-invariant individual factors. This model allows us to measure income changes within individuals across two points in time, focusing on those who participated in consecutive survey years (2004-2006 and 2006-2008).
+### Model Specification
+The first-difference equation is:
+
+$$
+\Delta Y_{it} = \beta \Delta X_{it} + \Delta \epsilon_{it}
+$$
 
 ---
 
