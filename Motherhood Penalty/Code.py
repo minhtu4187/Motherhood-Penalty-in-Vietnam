@@ -11,32 +11,6 @@
 #|  __/| |___| |\  |/ ___ \| |___| |   | |                    
 #|_|   |_____|_| \_/_/   \_\_____|_|   |_|       
 
-{
- "cells": [
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "This module: \n",
-    "1. Tests the pumped_coin to test the Download social functions. \n",
-    "2. Move them to the uitls functions bank \n",
-    "3. Download them"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 14,
-   "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "The autoreload extension is already loaded. To reload it, use:\n",
-      "  %reload_ext autoreload\n"
-     ]
-    }
-   ],
 
 import os
 os.chdir(r'/Users/professortu/Documents/GFE/11. ATPL/VHLSS/VLSS 2002 _ Vietnamese/')
