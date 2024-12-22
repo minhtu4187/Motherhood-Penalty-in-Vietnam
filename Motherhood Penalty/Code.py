@@ -12,7 +12,7 @@
 #|_|   |_____|_| \_/_/   \_\_____|_|   |_|       
 
 import os
-os.chdir(r'/Users/professortu/Documents/GFE/11. ATPL/VHLSS/VLSS 2002 _ Vietnamese/')
+os.chdir(r'/Users/professortu/Documents/GFE/11. ATPL/VHLSS/')
 import sys
 sys.path.append(r'/Users/professortu/Documents/GFE/11. ATPL/VHLSS/')
 import pandas as pd 
@@ -34,7 +34,7 @@ columns_to_keep = ['tinh', 'huyen', 'xa', 'diaban', 'hoso', 'ttnt', 'matv',
 # ║────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────║#
 # ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝#
 
-ho1_2004                    = pd.read_stata('/Users/professortu/Documents/GFE/11. ATPL/VHLSS/VLSS 2004 _ Vietnamese/Data/VLSS 2004 _Ho/Ho1.dta', convert_categoricals=False)
+ho1_2004                    = pd.read_stata('/Users/professortu/Documents/GFE/11. ATPL/VHLSS/2004/Data/VLSS_2004 _Ho/Ho1.dta', convert_categoricals=False)
 ho1_2004                    = ho1_2004[ho1_2004['m1c1'] != 2]
 ho1_2004['dup']             = ho1_2004.duplicated(subset=['tinh', 'huyen', 'xa', 'diaban', 'hoso'], keep=False).astype(int)
 ho1_2004_cleaned            = ho1_2004[ho1_2004['dup'] == 0]
@@ -42,13 +42,13 @@ ho1_2004_cleaned            = ho1_2004_cleaned.drop(columns=['dup'])
 ho1_2004_cleaned[['tinh', 'huyen', 'xa', 'diaban', 'hoso']] = ho1_2004_cleaned[['tinh', 'huyen', 'xa', 'diaban', 'hoso']].apply(pd.to_numeric, errors='coerce')
 del ho1_2004
 
-muc_123a_2004               = pd.read_stata('/Users/professortu/Documents/GFE/11. ATPL/VHLSS/VLSS 2004 _ Vietnamese/Data/VLSS 2004 _Ho/m1_2_3a.dta', convert_categoricals=False)
+muc_123a_2004               = pd.read_stata('/Users/professortu/Documents/GFE/11. ATPL/VHLSS/2004/Data/VLSS_2004 _Ho/m1_2_3a.dta', convert_categoricals=False)
 muc_123a_2004['dup']        = muc_123a_2004.duplicated(subset=['tinh', 'huyen', 'xa', 'diaban', 'hoso', 'matv', 'ky'], keep=False).astype(int)
 muc_123a_2004_cleaned       = muc_123a_2004[muc_123a_2004['dup'] == 0]
 muc_123a_2004_cleaned       = muc_123a_2004_cleaned.drop(columns=['dup'])
 del muc_123a_2004
 
-muc_4a_2004                 = pd.read_stata('/Users/professortu/Documents/GFE/11. ATPL/VHLSS/VLSS 2004 _ Vietnamese/Data/VLSS 2004 _Ho/m4a.dta', convert_categoricals=False)
+muc_4a_2004                 = pd.read_stata('/Users/professortu/Documents/GFE/11. ATPL/VHLSS/2004/Data/VLSS_2004 _Ho/m4a.dta', convert_categoricals=False)
 muc_4a_2004['dup']          = muc_4a_2004.duplicated(subset=['tinh', 'huyen', 'xa', 'diaban', 'hoso', 'matv', 'ky'], keep=False).astype(int)
 muc_4a_2004_cleaned         = muc_4a_2004[muc_4a_2004['dup'] == 0]
 muc_4a_2004_cleaned         = muc_4a_2004_cleaned.drop(columns=['dup'])
@@ -76,7 +76,7 @@ data_2004                   = data_2004[columns_to_keep]
 # ║────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────║#
 # ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝#
 
-ttchung_2006                 = pd.read_stata('/Users/professortu/Documents/GFE/11. ATPL/VHLSS/VLSS 2006 _ Vietnamese/Data/VLSS 2006 _ Ho/Income/ttchung.dta', convert_categoricals=False)
+ttchung_2006                 = pd.read_stata('/Users/professortu/Documents/GFE/11. ATPL/VHLSS/2006/Data/2006_Ho/Income/ttchung.dta', convert_categoricals=False)
 ttchung_2006                 = ttchung_2006.drop(columns=['tinh', 'huyen', 'xa', 'diaban', 'hoso', 'ttnt'])
 columns_to_rename            = ['tinh04', 'huyen04', 'xa04', 'diaban04', 'hoso04', 'ttnt04']
 columns_to_move              = ['tinh', 'huyen', 'xa', 'diaban', 'hoso','ttnt']
@@ -88,21 +88,21 @@ ttchung_2006_cleaned         = ttchung_2006_cleaned.drop(columns=['dup'])
 ttchung_2006_cleaned[['tinh', 'huyen', 'xa', 'diaban', 'hoso']] = ttchung_2006_cleaned[['tinh', 'huyen', 'xa', 'diaban', 'hoso']].apply(pd.to_numeric, errors='coerce')
 del columns_to_move, columns_to_rename, ttchung_2006
 
-muc_2a_2006                 = pd.read_stata('/Users/professortu/Documents/GFE/11. ATPL/VHLSS/VLSS 2006 _ Vietnamese/Data/VLSS 2006 _ Ho/Income/muc2a.dta', convert_categoricals=False)
+muc_2a_2006                 = pd.read_stata('/Users/professortu/Documents/GFE/11. ATPL/VHLSS/2006/Data/2006_Ho/Income/muc2a.dta', convert_categoricals=False)
 muc_2a_2006['dup']          = muc_2a_2006.duplicated(subset=['tinh', 'huyen', 'xa', 'diaban', 'hoso', 'matv'], keep=False).astype(int)
 muc_2a_2006_cleaned         = muc_2a_2006[muc_2a_2006['dup'] == 0]
 muc_2a_2006_cleaned         = muc_2a_2006_cleaned.drop(columns=['dup'])
 muc_2a_2006_cleaned[['tinh', 'huyen', 'xa', 'diaban', 'hoso']] = muc_2a_2006_cleaned[['tinh', 'huyen', 'xa', 'diaban', 'hoso']].apply(pd.to_numeric, errors='coerce')
 del muc_2a_2006
 
-muc_1a_2006                 = pd.read_stata('/Users/professortu/Documents/GFE/11. ATPL/VHLSS/VLSS 2006 _ Vietnamese/Data/VLSS 2006 _ Ho/Income/muc1a.dta', convert_categoricals=False)
+muc_1a_2006                 = pd.read_stata('/Users/professortu/Documents/GFE/11. ATPL/VHLSS/2006/Data/2006_Ho/Income/muc1a.dta', convert_categoricals=False)
 muc_1a_2006['dup']          = muc_1a_2006.duplicated(subset=['tinh', 'huyen', 'xa', 'diaban', 'hoso', 'matv'], keep=False).astype(int)
 muc_1a_2006_cleaned         = muc_1a_2006[muc_1a_2006['dup'] == 0]
 muc_1a_2006_cleaned         = muc_1a_2006_cleaned.drop(columns=['dup'])
 muc_1a_2006_cleaned[['tinh', 'huyen', 'xa', 'diaban', 'hoso']] = muc_1a_2006_cleaned[['tinh', 'huyen', 'xa', 'diaban', 'hoso']].apply(pd.to_numeric, errors='coerce')
 del muc_1a_2006
 
-muc_4a_2006                 = pd.read_stata('/Users/professortu/Documents/GFE/11. ATPL/VHLSS/VLSS 2006 _ Vietnamese/Data/VLSS 2006 _ Ho/Income/muc4a.dta', convert_categoricals=False)
+muc_4a_2006                 = pd.read_stata('/Users/professortu/Documents/GFE/11. ATPL/VHLSS/2006/Data/2006_Ho/Income/muc4a.dta', convert_categoricals=False)
 muc_4a_2006['dup']          = muc_4a_2006.duplicated(subset=['tinh', 'huyen', 'xa', 'diaban', 'hoso', 'matv'], keep=False).astype(int)
 muc_4a_2006_cleaned         = muc_4a_2006[muc_4a_2006['dup'] == 0]
 muc_4a_2006_cleaned         = muc_4a_2006_cleaned.drop(columns=['dup'])
@@ -136,7 +136,7 @@ data_2006                   = data_2006[columns_to_keep]
 # ║────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────║#
 # ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝#
 
-ho_2008                      = pd.read_stata('/Users/professortu/Documents/GFE/11. ATPL/VHLSS/VLSS 2008 _ Vietnamese/Data/VLSS 2008 _ Ho/ho.dta', convert_categoricals=False)
+ho_2008                      = pd.read_stata('/Users/professortu/Documents/GFE/11. ATPL/VHLSS/2008/Data/2008_ Ho/ho.dta', convert_categoricals=False)
 ho_2008                      = ho_2008.drop(columns=['tinh', 'huyen', 'xa', 'diaban', 'hoso', 'ttnt'])
 columns_to_rename            = ['tinh06', 'huyen06', 'xa06', 'diaban06', 'hoso06', 'ttnt06']
 columns_to_move              = ['tinh', 'huyen', 'xa', 'diaban', 'hoso','ttnt']
@@ -147,20 +147,20 @@ ho_2008_cleaned              = ho_2008[ho_2008['dup'] == 0]
 ho_2008_cleaned              = ho_2008_cleaned.drop(columns=['dup'])
 del columns_to_move,columns_to_rename, ho_2008
 
-ho11_2008                     = pd.read_stata('/Users/professortu/Documents/GFE/11. ATPL/VHLSS/VLSS 2008 _ Vietnamese/Data/VLSS 2008 _ Ho/ho11.dta', convert_categoricals=False)
+ho11_2008                     = pd.read_stata('/Users/professortu/Documents/GFE/11. ATPL/VHLSS/2008/Data/2008_ Ho/ho11.dta', convert_categoricals=False)
 ho11_2008['dup']              = ho11_2008.duplicated(subset=['tinh', 'huyen', 'xa', 'diaban', 'hoso'], keep=False).astype(int)
 ho11_2008_cleaned             = ho11_2008[ho11_2008['dup'] == 0]
 ho11_2008_cleaned             = ho11_2008_cleaned.drop(columns=['dup'])
 del ho11_2008
 
-muc_123a_2008               = pd.read_stata('/Users/professortu/Documents/GFE/11. ATPL/VHLSS/VLSS 2008 _ Vietnamese/Data/VLSS 2008 _ Ho/muc123a.dta', convert_categoricals=False)
+muc_123a_2008               = pd.read_stata('/Users/professortu/Documents/GFE/11. ATPL/VHLSS/2008/Data/2008_ Ho/muc123a_ori.dta', convert_categoricals=False)
 muc_123a_2008['dup']        = muc_123a_2008.duplicated(subset=['tinh', 'huyen', 'xa', 'diaban', 'hoso', 'matv'], keep=False).astype(int)
 muc_123a_2008_cleaned       = muc_123a_2008[muc_123a_2008['dup'] == 0]
 muc_123a_2008_cleaned       = muc_123a_2008_cleaned.drop(columns=['dup'])
 del muc_123a_2008
 
 
-muc_4a_2008                 = pd.read_stata('/Users/professortu/Documents/GFE/11. ATPL/VHLSS/VLSS 2008 _ Vietnamese/Data/VLSS 2008 _ Ho/muc4a.dta', convert_categoricals=False)
+muc_4a_2008                 = pd.read_stata('/Users/professortu/Documents/GFE/11. ATPL/VHLSS/2008/Data/2008_ Ho/muc4a.dta', convert_categoricals=False)
 muc_4a_2008['dup']          = muc_4a_2008.duplicated(subset=['tinh', 'huyen', 'xa', 'diaban', 'hoso', 'matv'], keep=False).astype(int)
 muc_4a_2008_cleaned         = muc_4a_2008[muc_4a_2008['dup'] == 0]
 muc_4a_2008_cleaned         = muc_4a_2008_cleaned.drop(columns=['dup'])
@@ -274,7 +274,7 @@ panel_data['id']            = panel_data.groupby(['tinh', 'huyen', 'xa', 'diaban
 columns_order               = [
                                 'tinh', 'huyen', 'xa', 'diaban', 'hoso', 'matv', 'm1ac1', 'm1ac1a', 'year', 'id',
                                 'mother_of_small_child', 'log_income', 'age', 'age_sq', 'schooling_years', 'ttnt', 
-                                'ethnic', 'marital_status', 'working?', 'canbo?, total_income'
+                                'ethnic', 'marital_status', 'working?', 'canbo?', 'total_income'
                                     ]
 panel_data                  = panel_data[columns_order]
 
